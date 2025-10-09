@@ -237,7 +237,7 @@ function html_css() {
 
 	# dropzone css
 	if ( config_get_global( 'cdn_enabled' ) == ON ) {
-		html_css_cdn_link( 'https://cdnjs.cloudflare.com/ajax/libs/dropzone/' . DROPZONE_VERSION . '/min/dropzone.min.css' );
+		html_css_cdn_link( 'https://cdnjs.loli.net/ajax/libs/dropzone/' . DROPZONE_VERSION . '/min/dropzone.min.css' );
 	} else {
 		html_css_link( 'dropzone-' . DROPZONE_VERSION . '.min.css' );
 	}
@@ -358,10 +358,10 @@ function html_head_javascript() {
 
 	if ( config_get_global( 'cdn_enabled' ) == ON ) {
 		# JQuery
-		html_javascript_cdn_link( 'https://ajax.googleapis.com/ajax/libs/jquery/' . JQUERY_VERSION . '/jquery.min.js', JQUERY_HASH );
+		html_javascript_cdn_link( 'https://cdnjs.loli.net/ajax/libs/jquery/' . JQUERY_VERSION . '/jquery.min.js', JQUERY_HASH );
 
 		# Dropzone
-		html_javascript_cdn_link( 'https://cdnjs.cloudflare.com/ajax/libs/dropzone/' . DROPZONE_VERSION . '/min/dropzone.min.js', DROPZONE_HASH );
+		html_javascript_cdn_link( 'https://cdnjs.loli.net/ajax/libs/dropzone/' . DROPZONE_VERSION . '/min/dropzone.min.js', DROPZONE_HASH );
 	} else {
 		# JQuery
 		html_javascript_link( 'jquery-' . JQUERY_VERSION . '.min.js' );

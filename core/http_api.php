@@ -227,25 +227,21 @@ function http_security_headers() {
 		http_csp_add( 'frame-ancestors', "'none'" );
 		http_csp_add( 'style-src', "'self'" );
 		http_csp_add( 'style-src', "'unsafe-inline'" );
+		http_csp_add( 'font-src', "'self'" );
 		http_csp_add( 'script-src', "'self'" );
+		http_csp_add( 'script-src', "'unsafe-inline'" );
 		http_csp_add( 'img-src', "'self'" );
 		http_csp_add( 'img-src', "data:" );
 
 		# White list the CDN urls (if enabled)
 		if ( config_get_global( 'cdn_enabled' ) == ON ) {
-			http_csp_add( 'style-src', 'ajax.googleapis.com' );
-			http_csp_add( 'style-src', 'stackpath.bootstrapcdn.com' );
-			http_csp_add( 'style-src', 'fonts.googleapis.com' );
-			http_csp_add( 'style-src', 'cdnjs.cloudflare.com' );
+			http_csp_add( 'style-src', 'cdnjs.loli.net' );
+			http_csp_add( 'style-src', 'fonts.loli.net' );
 
-			http_csp_add( 'font-src', 'fonts.gstatic.com' );
-			http_csp_add( 'font-src', 'stackpath.bootstrapcdn.com' );
+			http_csp_add( 'font-src', 'cdnjs.loli.net' );
+			http_csp_add( 'font-src', 'gstatic.loli.net' );
 
-			http_csp_add( 'script-src', 'ajax.googleapis.com' );
-			http_csp_add( 'script-src', 'stackpath.bootstrapcdn.com' );
-			http_csp_add( 'script-src', 'cdnjs.cloudflare.com' );
-
-			http_csp_add( 'img-src', 'ajax.googleapis.com' );
+			http_csp_add( 'script-src', 'cdnjs.loli.net' );
 
 		}
 
