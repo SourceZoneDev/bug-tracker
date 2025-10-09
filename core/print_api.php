@@ -633,7 +633,12 @@ function print_project_option_list( $p_project_id = null, $p_include_all_project
 			$t_can_report = access_has_project_level( $t_report_bug_threshold, $t_id, $t_user_id );
 		}
 
+		$t_cat_arr = category_get_all_rows( $t_id, null, true, true );
 		echo '<option value="' . $t_id . '"';
+		if( count( $t_cat_arr ) == 0 ) {
+			echo ' disabled';
+		}
+
 		check_selected( $p_project_id, $t_id, false );
 		check_disabled( $t_id == $p_filter_project_id || !$t_can_report );
 		echo '>' . string_attribute( project_get_field( $t_id, 'name' ) ) . '</option>' . "\n";

@@ -242,6 +242,11 @@ $t_form_encoding = '';
 if( $t_show_attachments ) {
 	$t_form_encoding = 'enctype="multipart/form-data"';
 }
+
+$t_cat_arr = category_get_all_rows( $t_project_id, null, true, true );
+if( count( $t_cat_arr ) == 0 ) {
+	print_header_redirect( 'login_select_proj_page.php?ref=bug_report_page.php' );
+}
 ?>
 <div class="col-md-12 col-xs-12">
 <form id="report_bug_form"
