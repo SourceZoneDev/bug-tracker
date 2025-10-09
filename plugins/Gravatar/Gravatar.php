@@ -29,7 +29,7 @@
  * the updated gravatar images to show on sites
  */
 class GravatarPlugin extends MantisPlugin {
-	const GRAVATAR_URL = 'https://secure.gravatar.com/';
+	const GRAVATAR_URL = 'https://seccdn.libravatar.org/';
 
 	/**
 	 * Default Gravatar image types

@@ -41,5 +41,5 @@
  * @author Liuxinyu970226
  */
 
-$s_plugin_Gravatar_title = '通过Gravatar生成头像';
+$s_plugin_Gravatar_title = '通过Libravatar生成头像';
 $s_plugin_Gravatar_description = '一个基于使用头像服务的电子邮件地址，显示用户头像的插件。';
