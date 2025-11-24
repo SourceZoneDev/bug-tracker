@@ -733,7 +733,7 @@ if( $t_flags['monitor_show'] ) {
 			<br /><br />
 			<form method="post" action="bug_monitor_add.php" class="form-inline noprint">
 				<?php echo form_security_field( 'bug_monitor_add' ) ?>
-				<input type="hidden" name="bug_id" value="<?php echo (integer)$f_issue_id; ?>" />
+				<input type="hidden" name="bug_id" value="<?php echo (int)$f_issue_id; ?>" />
 				<!--suppress HtmlFormInputWithoutLabel -->
 				<input type="text" class="input-sm" id="bug_monitor_list_user_to_add" name="user_to_add" />
 				<input type="submit" class="btn btn-primary btn-sm btn-white btn-round" value="<?php echo lang_get( 'add' ) ?>" />
@@ -934,9 +934,10 @@ function bug_view_relationship_get_details( $p_bug_id, BugRelationshipData $p_re
 	}
 
 	# add summary
-	$t_relationship_info_html .= $t_td . string_display_line_links( $t_bug->summary );
+	$t_relationship_info_html .= $t_td 
+		. '<span class="padding-right-4">' . string_display_line_links( $t_bug->summary ) . '</span>';
 	if( VS_PRIVATE == $t_bug->view_state ) {
-		$t_relationship_info_html .= icon_get( 'fa-lock', '', lang_get( 'private' ) );
+		$t_relationship_info_html .= icon_get( 'fa-lock', 'ace-icon', lang_get( 'private' ) );
 	}
 
 	# add delete link if bug not read only and user has access level
